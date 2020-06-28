@@ -1,10 +1,32 @@
+ <!-- * 3131B Grigoras Emanuel, Ciprian Iacob, Iriciuc Andrei, Ilciuc Sergiu -->
+
 <div style="text-align:center">
   <h1>Object detection using Tensorflow</h1>
 
   <video hidden id="vid" width="300" height="300"></video>
-  <canvas id="canvas"></canvas>
-<div *ngIf="!firstDraw" class="loading">
-  Loading webcam<mat-spinner></mat-spinner></div>
 
+  <div class="container">
+
+   <div class="score-threshold">
+    <span style="margin-right: 5px;">Score Threshold</span>
+    <input type="number" matInput min="0" max="1" step="0.1" [value]="scoreThreshold" (input)="scoreThreshold = $event.target.value"/>
+   </div>
+
+   <div class="canvas-container">
+     <canvas id="canvas"></canvas>
+     <div *ngIf="!firstDraw" class="loading">
+       <span>Loading webcam</span>
+       <mat-spinner></mat-spinner>
+     </div>
+   </div>
+
+    <div class="detected-objects">
+      <h2>Detections</h2>
+      <div class="detected-object" *ngFor="let object of detectedObjects">
+        {{object}}
+      </div>
+    </div>
+
+  </div>
 
 </div>

@@ -1,12 +1,53 @@
+/* 3131B Grigoras Emanuel, Ciprian Iacob, Iriciuc Andrei, Ilciuc Sergiu */
+
 /* You can add global styles to this file, and also import other style files */
-body{
+body {
   font-family: sans-serif;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
-
-.mat-progress-spinner circle, .mat-spinner circle {
+.mat-progress-spinner circle,
+.mat-spinner circle {
   stroke: #3fb53f;
- }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.canvas-container {
+  background-color: grey;
+  width: 600px;
+  height: 600px;
+  border: 2px solid black;
+}
+
+.detected-objects {
+  border: 2px solid grey;
+  width: 300px;
+  font-size: 20px;
+  font-family: sans-serif;
+  text-transform: capitalize;
+}
+
+.detected-object {
+  background-color: green;
+  color: white;
+  margin: 3px;
+}
+
+.score-threshold {
+  max-width: 300px;
+  border: 2px solid grey;
+  padding: 50px;
+}
