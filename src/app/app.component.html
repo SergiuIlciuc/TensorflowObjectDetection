@@ -10,6 +10,12 @@
    <div class="score-threshold">
     <span style="margin-right: 5px;">Score Threshold</span>
     <input type="number" matInput min="0" max="1" step="0.1" [value]="scoreThreshold" (input)="scoreThreshold = $event.target.value"/>
+
+    <div class="load-models">
+      <button matButton (click)="loadModel(true)">Load custom model</button>
+      <button matButton (click)="loadModel(false)">Load official model</button>
+    </div>
+    <h2>Model loaded: {{modelType}}</h2>
    </div>
 
    <div class="canvas-container">

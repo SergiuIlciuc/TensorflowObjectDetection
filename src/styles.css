@@ -51,3 +51,13 @@ body {
   border: 2px solid grey;
   padding: 50px;
 }
+
+.load-models {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+}
+
+.load-models button{
+  margin: 5px 0;
+}
