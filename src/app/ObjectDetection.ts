@@ -31,10 +31,6 @@ export class ObjectDetection {
     this.modelPath = '../../assets/model.json';
   }
 
-  private getPrefix(base: ObjectDetectionBaseModel) {
-    return base === 'lite_mobilenet_v2' ? `ssd${base}` : `ssd_${base}`;
-  }
-
   async load() {
     this.model = await tfconv.loadGraphModel(this.modelPath);
     // Warmup the model.

@@ -12,4 +12,9 @@ export const CLASSES: { [key: string]: ObjectDetectionClass } = {
     id: 1,
     displayName: '1leu',
   },
+  2: {
+    name: '5lei',
+    id: 2,
+    displayName: '5lei',
+  },
 };
