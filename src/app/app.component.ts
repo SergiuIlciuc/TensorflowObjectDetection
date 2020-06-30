@@ -1,4 +1,5 @@
 /* 3131B Grigoras Emanuel, Ciprian Iacob, Iriciuc Andrei, Ilciuc Sergiu */
+// Acest fisier contine si cod preluat din documentatia oficila https://www.npmjs.com/package/@tensorflow-models/coco-ssd
 
 import { Component, OnInit } from '@angular/core';
 import { ObjectDetection } from './ObjectDetection';

@@ -7,6 +7,7 @@ body {
 
 html,
 body {
+  background-color: rgb(77, 149, 194);
   height: 100%;
 }
 body {
@@ -23,33 +24,38 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+
 }
 
 .canvas-container {
-  background-color: grey;
+  background-color: rgb(255, 255, 255);
   width: 600px;
   height: 600px;
   border: 2px solid black;
 }
 
 .detected-objects {
-  border: 2px solid grey;
+  border: 2px solid darkblue;
   width: 300px;
   font-size: 20px;
   font-family: sans-serif;
   text-transform: capitalize;
+  background-color: lightgray;
+
 }
 
 .detected-object {
   background-color: green;
   color: white;
   margin: 3px;
+
 }
 
 .score-threshold {
   max-width: 300px;
-  border: 2px solid grey;
+  border: 2px solid darkblue;
   padding: 50px;
+  background-color: lightgray;
 }
 
 .load-models {
@@ -60,4 +66,14 @@ body {
 
 .load-models button{
   margin: 5px 0;
+  padding: 15px 32px;
+  background-color: lightgreen;
+  font-size:15px;
+ }
+
+ #title {
+    font-size: 30pt;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:Linen;
 }
