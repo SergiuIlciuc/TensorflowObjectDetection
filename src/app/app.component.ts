@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   public firstDraw = false;
   public changedModel = false;
   public scoreThreshold = 0.9;
-  public modelType="Custom";
+  public modelType = "Custom";
 
   public detectedObjects = [];
   public detectedObjectsSet = {};
@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
   }
 
   loadModel(custom) {
-    this.modelType = custom? "Custom": "Official";
+    this.modelType = custom ? "Custom" : "Official";
     this.changedModel = true;
 
     setTimeout(() => {
@@ -39,7 +39,6 @@ export class AppComponent implements OnInit {
   }
 
   public async predictWithCocoModel(custom = true) {
-
     let model = null;
 
     if (custom) {
@@ -79,14 +78,14 @@ export class AppComponent implements OnInit {
     }
 
     model.detect(video).then(predictions => {
-      this.renderPredictions(predictions);
+      this.drawPredictions(predictions);
       requestAnimationFrame(() => {
         this.detectFrame(video, model);
       });
     });
   }
 
-  renderPredictions = predictions => {
+  drawPredictions = predictions => {
     this.firstDraw = true;
 
     const canvas = <HTMLCanvasElement>document.getElementById("canvas");
@@ -129,6 +128,8 @@ export class AppComponent implements OnInit {
         ctx.fillStyle = "#000000";
         ctx.fillText(prediction.class + ' ' + (prediction.score * 100).toFixed() + '%', x, y);
 
+        // We check in the map to see if the prediction was already added
+        // If not, then we add it to the array
         if (!this.detectedObjectsSet[prediction.class]) {
           this.detectedObjectsSet[prediction.class] = prediction.class;
           this.detectedObjects.push(prediction.class);
