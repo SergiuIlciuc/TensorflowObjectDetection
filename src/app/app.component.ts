@@ -124,13 +124,6 @@ export class AppComponent implements OnInit {
         const textWidth = ctx.measureText(prediction.class + '100%').width;
         const textHeight = parseInt(font, 10); // base 10
         ctx.fillRect(x, y, textWidth + 4, textHeight + 4);
-      }
-    });
-
-    predictions.forEach(prediction => {
-      if (prediction.score > this.scoreThreshold) {
-        const x = prediction.bbox[0] * rateW;
-        const y = prediction.bbox[1] * rateH;
 
         // Draw the text last to ensure it's on top.
         ctx.fillStyle = "#000000";
